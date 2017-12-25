@@ -1,4 +1,4 @@
-# 樹莓派 RPI router 專題
+# 樹莓派 RPI router(Repeater) 專題
 
 
 ## 前置準備硬體、軟體、配件
@@ -139,8 +139,8 @@ reboot
 * 進一步設定網路介面
 
 這個專題我們需要兩個無線網路介面
-內建的我們取名為 wlan_LAN
-外接的我們取名為品牌名字 wlan_toWAN
+內建的我們取名為 wlan_LAN，用當作 AP 基地台及 LAN 端的介面
+外接的我們取名為 wlan_toWAN 表示這個介面要用來連到 ISP gateway，去跟 gateway DHCP server 取得 DHCP client IP
 
 先設定全部的 interfaces
 ```
