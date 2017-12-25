@@ -1,0 +1,2 @@
+
+www-data ALL = NOPASSWD: /usr/sbin/service , /usr/bin/php , /bin/bash , /bin/sed

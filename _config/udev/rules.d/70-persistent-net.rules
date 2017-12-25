@@ -1,0 +1,5 @@
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="b8:27:eb:6f:cc:6d", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="eth_built_in"
+
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="b8:27:eb:3a:99:38", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan_built_in"
+
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="74:da:38:8d:a1:83", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan_edimax"

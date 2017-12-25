@@ -1,0 +1,27 @@
+# The format of this file is documented in the dhcpd.leases(5) manual page.
+# This lease file was written by isc-dhcp-4.3.5
+
+# authoring-byte-order entry is generated, DO NOT DELETE
+authoring-byte-order little-endian;
+
+lease 192.168.100.11 {
+  starts epoch 1511490787; # Fri Nov 24 10:33:07 2017
+  ends epoch 1511491387; # Fri Nov 24 10:43:07 2017
+  tstp epoch 1511491387; # Fri Nov 24 10:43:07 2017
+  cltt epoch 1511490787; # Fri Nov 24 10:33:07 2017
+  binding state free;
+  hardware ethernet 38:d5:47:5d:25:12;
+  set vendor-class-identifier = "android-dhcp-6.0";
+}
+lease 192.168.100.10 {
+  starts epoch 1511556395; # Sat Nov 25 04:46:35 2017
+  ends epoch 1511556995; # Sat Nov 25 04:56:35 2017
+  tstp epoch 1511556995; # Sat Nov 25 04:56:35 2017
+  cltt epoch 1511556395; # Sat Nov 25 04:46:35 2017
+  binding state free;
+  hardware ethernet 9c:d2:1e:aa:e3:45;
+  uid "\001\234\322\036\252\343E";
+  set vendor-class-identifier = "MSFT 5.0";
+}
+server-duid "\000\001\000\001!\253=\357\270'\353:\2318";
+

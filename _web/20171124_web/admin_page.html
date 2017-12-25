@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	<meta name="author" content="Adyjs-Chang">
+	<title>Admin Page</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/admin_page.css">
+	<link rel="stylesheet" type="text/css" href="css/RWD_admin_page.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/i18next.min.js"></script>
+</head>
+<body>
+<noscript>Please enable JavaScript in browser</br>請啟用瀏覽器的 JavaScript</noscript>
+<div id="container">
+
+	<nav id="desktop">
+		<ul>
+			<li id="logo"><img src="./image/pi_logo.svg"></li>
+			<li id="net-status"><img src="./image/network-status.svg"></li>
+			<li id="pi-status"><img src="./image/pi.svg"></li>
+			<li id="setting"><img src="./image/settings.svg"></li>
+			<li id="logout"><img src="./image/logout.svg"><form action="./logout.php" method="post"><input id="logout-btn" type="submit" name="logout-submit" value=""></form></li>
+		</ul>
+	</nav>
+
+	<nav id="rwd">
+		<ul>
+			<li id="rwd-logout"><form action="./logout.php" method="post"><input id="logout-btn" type="submit" name="logout-submit" value=""></form></li>
+			<li id="rwd-setting"></li>
+			<li id="rwd-pi-status"></li>
+			<li id="rwd-net-status"></li>
+		</ul>
+	</nav>
+
+	<section id="main">
+		<noscript>
+			<h1>Please enable JavaScript in browser</br>請開啟瀏覽器的 JavaScript 功能</h1>
+		</noscript>
+
+		<select id="lang">
+			<option value="tw" selected="">中文</option>
+			<option value="en">English</option>
+		</select>
+
+		
+
+		<section id="page">
+
+		</section>
+	</section>
+
+</div>
+<script type="text/javascript" src="js/admin_page.js"></script>
+</body>
+</html>

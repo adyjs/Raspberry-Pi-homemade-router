@@ -1,0 +1,914 @@
+@media screen and (max-width: 320px){
+	#container{
+		width:100%;
+		height:100%;
+		#desktop{
+			display:none;
+		}
+		#rwd{
+			display:block;
+			width:100%;
+			ul{
+				list-style-type: none;
+				li{
+					float:left;
+					width:25%;
+					height:60px;
+					display: inline-block;
+					background-color: rgba(0,0,0,0.78);
+					&:hover{
+						cursor:pointer;
+						background-color: rgba(0,0,0,1);
+					}
+				}
+				#rwd-net-status{
+					background-image: url("../image/network-status.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 40px;
+				}
+				#rwd-pi-status{
+					background-image: url("../image/pi.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 45px;
+				}
+				#rwd-setting{
+					background-image: url("../image/settings.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 40px;
+				}
+				#rwd-logout{
+					background-image: url("../image/logout.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 40px;
+					position: relative;
+					input{
+						width:100%;
+						height:100%;
+						position: absolute;
+						top:0;
+						left:0;
+						background-color: transparent;
+						border:none;
+						outline: none;
+						&:hover{
+							cursor:pointer;
+						}
+					}
+				}
+			}
+		}
+		#main{
+			display:block;
+			width:100%;
+			padding:6px 0 0 0;
+			select#lang{
+				position: absolute;
+				top:66px;
+				right:0px;
+				border:none;
+				width:90px;
+				height:30px;
+				font-size: 18px;
+			}
+			#page{
+				width: 100%;
+				height: 100%;
+				padding:0 6px;
+				h1#page-title{
+					display: inline-block;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-weight: 600;
+					font-size: 20px;
+					color: rgba(0,0,0,0.60);
+					padding:2px 0;
+					border-bottom: rgba(0,0,0,0.60) solid 2px;
+					letter-spacing: 1px;
+				}
+				#content{
+					padding:12px;
+					h2.sub-title{
+						font-family: Tahoma, Geneva, sans-serif;
+						font-weight: 900;
+						color: rgba(0,0,0,0.8);
+						font-size: 16px;
+						padding:2px 0;
+						margin-bottom: 0px;
+						border-bottom: rgba(0,0,0,0.5) solid 1px;
+						letter-spacing: 1px;
+					}
+					table{
+						margin-bottom: 10px;
+						tr{
+							font-weight: 100;
+							color: rgba(0,0,0,0.8);
+							td{
+								font-family: Tahoma, Geneva, sans-serif;
+								font-size:13px;
+								font-weight: 100;
+								color: rgba(0,0,0,0.6);
+								letter-spacing: 1px;
+							}
+						}
+						.td-title{
+							padding:6px 16px;
+						}
+						.td-data{
+							padding:6px 16px;
+						}
+						#clients-list{
+							background-color: rgb(250,250,250);
+				    		tr{
+				    			td{
+				    				font-size:14px;
+				    				font-weight:900;
+				    				white-space: pre;
+				    			}
+				    		}
+						}
+					}
+					#dhcp-client-ajax-loader{
+						width:50px;
+						display:block;
+						margin:110px auto 0 auto;
+					}
+					button{
+						display:block;
+						width:100%;
+						margin: 3px 0;
+						background-color: rgba(0,0,0,0.6);
+						color:rgba(255,255,255,0.7);
+						border:none;
+						font-size: 16px;
+						&:hover{
+							cursor:pointer;
+							background-color: rgba(0,0,0,1);
+							color:white;
+						}
+					}
+					#setting-stage{
+						margin-top:15px;
+						display: block;
+						width:100%;
+						min-height:200px;
+						table{
+							width:100%;
+							border-collapse: collapse;
+							tr{
+								border-bottom:#777 solid 1px;
+								td{
+									display:block;
+									width:100%;
+									button{
+										margin:10px auto;
+										width:50%;
+									}
+								}
+								.td-title{
+								}
+								.td-data{
+									color:#000;
+									font-weight: 900;
+								}
+							}
+							.td-button{
+								border:none;
+							}
+						}
+						.error-msg{
+			    			tr{
+			    				td{
+			    					white-space: pre;
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 500px) {
+	#container{
+		width:100%;
+		height:100%;
+		#desktop{
+			display:none;
+		}
+		#rwd{
+			display:block;
+			width:100%;
+			ul{
+				list-style-type: none;
+				li{
+					float:left;
+					width:25%;
+					height:55px;
+					background-color: rgba(0,0,0,0.78);
+					&:hover{
+						cursor:pointer;
+						background-color: rgba(0,0,0,1);
+					}
+				}
+				#rwd-net-status{
+					background-image: url("../image/network-status.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 35px;
+				}
+				#rwd-pi-status{
+					background-image: url("../image/pi.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 40px;
+				}
+				#rwd-setting{
+					background-image: url("../image/settings.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 35px;
+				}
+				#rwd-logout{
+					background-image: url("../image/logout.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 35px;
+				}
+			}
+		}
+		#main{
+			display:block;
+			width:100%;
+			padding:6px;
+			select#lang{
+				position: absolute;
+				top:60px;
+				right:0px;
+				border:none;
+				width:110px;
+				height:30px;
+				font-size: 18px;
+			}
+			#page{
+				width: 100%;
+				height: 100%;
+				padding:0 6px;
+				h1#page-title{
+					display: inline-block;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-weight: 600;
+					font-size: 20px;
+					color: rgba(0,0,0,0.60);
+					padding:2px 0;
+					border-bottom: rgba(0,0,0,0.60) solid 2px;
+					letter-spacing: 1px;
+				}
+				#content{
+					padding:12px;
+					h2.sub-title{
+						font-family: Tahoma, Geneva, sans-serif;
+						font-weight: 900;
+						color: rgba(0,0,0,0.8);
+						font-size: 17px;
+						padding:2px 0;
+						margin-bottom: 0px;
+						border-bottom: rgba(0,0,0,0.5) solid 1px;
+						letter-spacing: 1px;
+					}
+					table{
+						margin-bottom: 10px;
+						tr{
+							font-weight: 100;
+							color: rgba(0,0,0,0.8);
+							td{
+								font-family: Tahoma, Geneva, sans-serif;
+								font-size:15px;
+								font-weight: 100;
+								color: rgba(0,0,0,0.6);
+								letter-spacing: 1px;
+							}
+						}
+						.td-title{
+							padding:6px 16px;
+						}
+						.td-data{
+							padding:6px 16px;
+						}
+						#clients-list{
+							background-color: rgb(250,250,250);
+				    		tr{
+				    			td{
+				    				font-size:14px;
+				    				font-weight:900;
+				    				white-space: pre;
+				    			}
+				    		}
+						}
+					}
+					#dhcp-client-ajax-loader{
+						width:50px;
+						display:block;
+						margin:110px auto 0 auto;
+					}
+					button{
+						display:block;
+						width:100%;
+						margin: 3px 0;
+						background-color: rgba(0,0,0,0.6);
+						color:rgba(255,255,255,0.7);
+						border:none;
+						font-size: 16px;
+						&:hover{
+							cursor:pointer;
+							background-color: rgba(0,0,0,1);
+							color:white;
+						}
+					}
+					#setting-stage{
+						margin-top:15px;
+						display: block;
+						width:100%;
+						min-height:200px;
+						table{
+							width:100%;
+							border-collapse: collapse;
+							tr{
+								border-bottom:#777 solid 1px;
+								td{
+									display:block;
+									width:100%;
+									button{
+										margin:10px auto;
+										width:50%;
+									}
+								}
+								.td-title{
+								}
+								.td-data{
+									color:#000;
+									font-weight: 900;
+								}
+							}
+							.td-button{
+								border:none;
+							}
+						}
+						.error-msg{
+			    			tr{
+			    				td{
+			    					white-space: pre;
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 501px) and (max-width: 767px) {
+	#container{
+		width:100%;
+		height:100%;
+		#desktop{
+			display:none;
+		}
+		#rwd{
+			display:block;
+			width:100%;
+			ul{
+				list-style-type: none;
+				li{
+					float:left;
+					width:25%;
+					height:65px;
+					background-color: rgba(0,0,0,0.78);
+					&:hover{
+						cursor:pointer;
+						background-color: rgba(0,0,0,1);
+					}
+				}
+				#rwd-net-status{
+					background-image: url("../image/network-status.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 50px;
+				}
+				#rwd-pi-status{
+					background-image: url("../image/pi.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 60px;
+				}
+				#rwd-setting{
+					background-image: url("../image/settings.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 50px;
+				}
+				#rwd-logout{
+					background-image: url("../image/logout.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 50px;
+				}
+			}
+		}
+		#main{
+			display:block;
+			width:100%;
+			padding:6px;
+			select#lang{
+				position: absolute;
+				top:70px;
+				right:0px;
+				border:none;
+				width:120px;
+				height:30px;
+				font-size: 22px;
+			}
+			#page{
+				width: 100%;
+				height: 100%;
+				padding:0 6px;
+				h1#page-title{
+					display: inline-block;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-weight: 600;
+					font-size: 36px;
+					color: rgba(0,0,0,0.60);
+					padding:2px 0;
+					border-bottom: rgba(0,0,0,0.60) solid 2px;
+					letter-spacing: 1px;
+				}
+				
+				#content{
+					padding:12px;
+					h2.sub-title{
+						font-family: Tahoma, Geneva, sans-serif;
+						font-weight: 900;
+						color: rgba(0,0,0,0.8);
+						font-size: 24px;
+						padding:2px 0;
+						margin-bottom: 0px;
+						border-bottom: rgba(0,0,0,0.5) solid 1px;
+						letter-spacing: 1px;
+					}
+					table{
+						margin-bottom: 10px;
+						tr{
+							font-weight: 100;
+							color: rgba(0,0,0,0.8);
+							td{
+								font-family: Tahoma, Geneva, sans-serif;
+								font-size:22px;
+								font-weight: 100;
+								color: rgba(0,0,0,0.6);
+								letter-spacing: 1px;
+							}
+						}
+						.td-title{
+							padding:6px 16px;
+						}
+						.td-data{
+							padding:6px 16px;
+						}
+						#clients-list{
+							background-color: rgb(250,250,250);
+				    		tr{
+				    			td{
+				    				font-size:16px;
+				    				font-weight:900;
+				    				white-space: pre;
+				    			}
+				    		}
+						}
+					}
+					#dhcp-client-ajax-loader{
+						width:50px;
+						display:block;
+						margin:110px auto 0 auto;
+					}
+					button{
+						display:block;
+						width:100%;
+						margin: 3px 0;
+						background-color: rgba(0,0,0,0.6);
+						color:rgba(255,255,255,0.7);
+						border:none;
+						font-size: 20px;
+						&:hover{
+							cursor:pointer;
+							background-color: rgba(0,0,0,1);
+							color:white;
+						}
+					}
+					#setting-stage{
+						margin-top:15px;
+						display: block;
+						width:100%;
+						min-height:200px;
+						table{
+							width:100%;
+							border-collapse: collapse;
+							tr{
+								border-bottom:#777 solid 1px;
+								td{
+									display:block;
+									width:100%;
+									button{
+										margin:10px auto;
+										width:50%;
+									}
+								}
+								.td-title{
+								}
+								.td-data{
+									color:#000;
+									font-weight: 900;
+								}
+							}
+							.td-button{
+								border:none;
+							}
+						}
+						.error-msg{
+			    			tr{
+			    				td{
+			    					white-space: pre;
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+	#container{
+		width:100%;
+		height:100%;
+		#desktop{
+			display:none;
+		}
+		#rwd{
+			display:block;
+			width:100%;
+			ul{
+				list-style-type: none;
+				li{
+					float:left;
+					width:25%;
+					height:90px;
+					background-color: rgba(0,0,0,0.78);
+					&:hover{
+						cursor:pointer;
+						background-color: rgba(0,0,0,1);
+					}
+				}
+				#rwd-net-status{
+					background-image: url("../image/network-status.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+				#rwd-pi-status{
+					background-image: url("../image/pi.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 70px;
+				}
+				#rwd-setting{
+					background-image: url("../image/settings.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+				#rwd-logout{
+					background-image: url("../image/logout.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+			}
+		}
+		#main{
+			display:block;
+			width:100%;
+			padding:12px;
+			select#lang{
+				position: absolute;
+				top:100px;
+				right:0px;
+				border:none;
+				width:120px;
+				height:30px;
+				font-size: 26px;
+			}
+			#page{
+				width: 100%;
+				height: 100%;
+				padding:0 6px;
+				h1#page-title{
+					display: inline-block;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-weight: 600;
+					font-size: 38px;
+					color: rgba(0,0,0,0.60);
+					padding:2px 0;
+					border-bottom: rgba(0,0,0,0.60) solid 2px;
+					letter-spacing: 1px;
+				}
+				
+				#content{
+					padding:12px;
+					h2.sub-title{
+						font-family: Tahoma, Geneva, sans-serif;
+						font-weight: 900;
+						color: rgba(0,0,0,0.8);
+						font-size: 26px;
+						padding:2px 0;
+						margin-bottom: 0px;
+						border-bottom: rgba(0,0,0,0.5) solid 1px;
+						letter-spacing: 1px;
+					}
+					table{
+						margin-bottom: 10px;
+						tr{
+							font-weight: 100;
+							color: rgba(0,0,0,0.8);
+							td{
+								font-family: Tahoma, Geneva, sans-serif;
+								font-size:24px;
+								font-weight: 100;
+								color: rgba(0,0,0,0.6);
+								letter-spacing: 1px;
+							}
+						}
+						.td-title{
+							padding:6px 16px;
+						}
+						.td-data{
+							padding:6px 16px;
+						}
+						#clients-list{
+							background-color: rgb(250,250,250);
+				    		tr{
+				    			td{
+				    				font-size:16px;
+				    				font-weight:900;
+				    				white-space: pre;
+				    			}
+				    		}
+						}
+					}
+					#dhcp-client-ajax-loader{
+						width:50px;
+						display:block;
+						margin:110px auto 0 auto;
+					}
+					button{
+						display:block;
+						width:100%;
+						margin: 3px 0;
+						background-color: rgba(0,0,0,0.6);
+						color:rgba(255,255,255,0.7);
+						border:none;
+						font-size: 22px;
+						&:hover{
+							cursor:pointer;
+							background-color: rgba(0,0,0,1);
+							color:white;
+						}
+					}
+					#setting-stage{
+						margin-top:15px;
+						display: block;
+						width:100%;
+						min-height:200px;
+						table{
+							width:100%;
+							border-collapse: collapse;
+							tr{
+								border-bottom:#777 solid 1px;
+								td{
+									display:block;
+									width:100%;
+									button{
+										margin:10px auto;
+										width:50%;
+									}
+								}
+								.td-title{
+								}
+								.td-data{
+									color:#000;
+									font-weight: 900;
+								}
+							}
+							.td-button{
+								border:none;
+							}
+						}
+						.error-msg{
+			    			tr{
+			    				td{
+			    					white-space: pre;
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and (min-width: 901px) and (max-width: 1040px) {
+	#container{
+		width:100%;
+		height:100%;
+		#desktop{
+			display:none;
+		}
+		#rwd{
+			display:block;
+			width:100%;
+			ul{
+				list-style-type: none;
+				li{
+					float:left;
+					width:25%;
+					height:90px;
+					background-color: rgba(0,0,0,0.78);
+					&:hover{
+						cursor:pointer;
+						background-color: rgba(0,0,0,1);
+					}
+				}
+				#rwd-net-status{
+					background-image: url("../image/network-status.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+				#rwd-pi-status{
+					background-image: url("../image/pi.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 70px;
+				}
+				#rwd-setting{
+					background-image: url("../image/settings.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+				#rwd-logout{
+					background-image: url("../image/logout.svg");
+					background-position: center;
+					background-repeat: no-repeat; 
+					background-size: 65px;
+				}
+			}
+		}
+		#main{
+			display:block;
+			width:100%;
+			padding:16px;
+			select#lang{
+				position: absolute;
+				top:110px;
+				right:0px;
+				border:none;
+				width:140px;
+				height:40px;
+				font-size: 28px;
+			}
+			#page{
+				width: 100%;
+				height: 100%;
+				padding:0 6px;
+				h1#page-title{
+					display: inline-block;
+					font-family: Tahoma, Geneva, sans-serif;
+					font-weight: 600;
+					font-size: 40px;
+					color: rgba(0,0,0,0.60);
+					padding:2px 0;
+					border-bottom: rgba(0,0,0,0.60) solid 2px;
+					letter-spacing: 1px;
+				}
+				
+				#content{
+					padding:12px;
+					h2.sub-title{
+						font-family: Tahoma, Geneva, sans-serif;
+						font-weight: 900;
+						color: rgba(0,0,0,0.8);
+						font-size: 28px;
+						padding:2px 0;
+						margin-bottom: 0px;
+						border-bottom: rgba(0,0,0,0.5) solid 1px;
+						letter-spacing: 1px;
+					}
+					table{
+						margin-bottom: 10px;
+						tr{
+							font-weight: 100;
+							color: rgba(0,0,0,0.8);
+							td{
+								font-family: Tahoma, Geneva, sans-serif;
+								font-size:28px;
+								font-weight: 100;
+								color: rgba(0,0,0,0.6);
+								letter-spacing: 1px;
+							}
+						}
+						.td-title{
+							padding:6px 16px;
+						}
+						.td-data{
+							padding:6px 16px;
+						}
+						#clients-list{
+							background-color: rgb(250,250,250);
+				    		tr{
+				    			td{
+				    				font-size:18px;
+				    				font-weight:900;
+				    				white-space: pre;
+				    			}
+				    		}
+						}
+					}
+					#dhcp-client-ajax-loader{
+						width:50px;
+						display:block;
+						margin:110px auto 0 auto;
+					}
+					button{
+						display:block;
+						width:100%;
+						margin: 3px 0;
+						background-color: rgba(0,0,0,0.6);
+						color:rgba(255,255,255,0.7);
+						border:none;
+						font-size: 24px;
+						&:hover{
+							cursor:pointer;
+							background-color: rgba(0,0,0,1);
+							color:white;
+						}
+					}
+					#setting-stage{
+						margin-top:15px;
+						display: block;
+						width:100%;
+						min-height:200px;
+						table{
+							width:100%;
+							border-collapse: collapse;
+							tr{
+								border-bottom:#777 solid 1px;
+								td{
+									display:block;
+									width:100%;
+									button{
+										margin:10px auto;
+										width:50%;
+									}
+								}
+								.td-title{
+								}
+								.td-data{
+									color:#000;
+									font-weight: 900;
+								}
+							}
+							.td-button{
+								border:none;
+							}
+						}
+						.error-msg{
+			    			tr{
+			    				td{
+			    					white-space: pre;
+			    				}
+			    			}
+			    		}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,174 @@
+body * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#overlay {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#container {
+  width: 100%;
+  height: 100%;
+}
+#container #desktop {
+  float: left;
+  width: 14%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#container #desktop ul {
+  list-style-type: none;
+}
+#container #desktop ul li {
+  width: 100%;
+  padding: 10px 8px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.7);
+}
+#container #desktop ul li img {
+  width: 42px;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+#container #desktop ul li:hover {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+}
+#container #desktop ul #logout {
+  position: relative;
+}
+#container #desktop ul #logout input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#container #desktop ul #logout input:hover {
+  cursor: pointer;
+}
+#container #desktop ul #logo {
+  padding: 8% 16%;
+}
+#container #desktop ul #logo img {
+  width: 100%;
+}
+#container #desktop ul #logo:hover {
+  background-color: transparent;
+  cursor: default;
+}
+#container #rwd {
+  display: none;
+}
+#container #main {
+  float: right;
+  width: 86%;
+  height: 100%;
+  padding: 16px 20px;
+  background-image: url("../image/oval.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60px;
+}
+#container #main select#lang {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  border: none;
+  width: 120px;
+  height: 40px;
+  font-size: 22px;
+}
+#container #main #page {
+  width: 100%;
+  height: 100%;
+}
+#container #main #page h1#page-title {
+  display: inline-block;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 2px 0;
+  border-bottom: rgba(0, 0, 0, 0.6) solid 2px;
+}
+#container #main #page #content {
+  background-color: white;
+  padding: 24px;
+  width: 100%;
+  min-height: 80%;
+}
+#container #main #page #content h2.sub-title {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 2px 0;
+  margin-bottom: 12px;
+  border-bottom: rgba(0, 0, 0, 0.5) solid 1px;
+}
+#container #main #page #content table {
+  margin-bottom: 10px;
+}
+#container #main #page #content table tr {
+  color: rgba(0, 0, 0, 0.8);
+}
+#container #main #page #content table tr td {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  padding: 6px 36px 6px 36px;
+}
+#container #main #page #content table .td-title {
+  width: 250px;
+}
+#container #main #page #content #clients-list {
+  background-color: #fafafa;
+}
+#container #main #page #content #clients-list tr td {
+  font-size: 14px;
+  font-weight: 900;
+  white-space: pre;
+}
+#container #main #page #content #dhcp-client-ajax-loader {
+  width: 50px;
+  display: block;
+  margin: 110px auto 0 auto;
+}
+#container #main #page #content button {
+  padding: 15px;
+  margin: 0 0 10px 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+}
+#container #main #page #content button:hover {
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+}
+#container #main #page #content #setting-stage {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+}
+#container #main #page #content #setting-stage .error-msg tr td {
+  white-space: pre;
+}
