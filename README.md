@@ -19,41 +19,11 @@ HDMI 螢幕
 
 wifi USB adapter (dongle)
 
-當樹莓派安裝好作業系統，可以透過三種方式連到 target board 上面
-
-#### 第一種方法
+#### 初始設定
 
 需要用到 HDMI 螢幕跟 USB 鍵盤
 
-安裝完 raspbian 作業系統之後，開啟 config.txt，
-把 hdmi_force_hotplug=1 前面的 # 去掉
-```
-hdmi_force_hotplug=1
-```
-接著啟動 board 就可以使用 HDMI 螢幕來 output
-使用 USB 鍵盤( 樹莓派不支援 PS2/USB 鍵盤 ) 來 input
-
-
-#### 第二種方法
-
-安裝完 raspbian 作業系統之後，新增一個 ssh 的空白檔案到記憶卡中來開啟 ssh 功能，
-
-接著把 board 用 RJ45 接頭接上跟電腦同一個 LAN 網段 (這邊是接上有 DHCP server 功能的 ISP gateway)，
-
-樹莓派會預設開啟 RJ45 接頭的 ethernet 介面，樹莓派會拿到 private IP，
-
-接著就可以從電腦連到 ISP，利用同一個區網的關係，再用 ssh (teraterm , putty) 連到樹莓派
-
-
-#### 第三種方法
-使用 USB to TTL Serial Cable
-
-..... QQ
-
-
-## Configuration
-
-* 安裝
+* 安裝作業系統到 flash SD 裡面
 
 下載 raspbian 無 X window 版本
 
@@ -75,17 +45,70 @@ SHA-256:bd2c04b94154c9804cc1f3069d15e984c927b750056dd86b9d86a0ad4be97f12
 
 另外再去下載 SD card formatter 跟燒映像檔的 Etcher
 
-格式化記憶卡再燒錄映像檔，完成之後開啟記憶卡，
+格式化記憶卡再燒錄映像檔，燒錄完成之後直接裝上 pi , 然後開機 , 
 
-開啟 config.txt，
+順便把鍵盤跟 HDMI 接上 pi , 開機完之後輸入預設的帳號密碼進入系統
 
-uncomment 
+
+*  Ehternet RJ45 連接網路
+
+進入系統之後 , 沒有網路很多東西都無法安裝跟更新 , 所以要先用網路 ,
+
+直接把一條 RJ45 網路線一端接 pi 一端直接接到 ISP gateway router , 
+
+通常就會直接拿到 private IP
+
+
+* 內建 Ethernet WIFI 連接網路
+
 ```
-hdmi_force_hotplug=1
+/etc/wpa_supplicant/wpa_supplicant.conf
+
+可以用來設定連接 wifi 網路的帳密
+
+格式是:
+
+network={
+	ssid="ssid_name"
+	psk="password"
+}
+
+設定好之後 reboot , 看看有沒有拿到 DHCP server 給的 IP
+
+這是最簡單的方法 , 也不用設定任何額外的東西 , 
+
+但是可以做得更好 , 例如加上一些帳密加密的選項跟做法
+
 ```
 
-另外再加入一個空白的檔案，檔名叫 ssh，用來開啟 ssh 功能
+* 開啟 ssh 連接
 
+到這邊還必須要把 pi 接到螢幕跟鍵盤 , 實在有點麻煩 , 
+所以開啟 ssh 可以直接用電腦遠端來連接會比較方便 ,
+
+cli 輸入
+
+```
+$ sudo raspi-config
+
+```
+會進入圖形對話選項 , 選擇 interfacing option -> ssh -> 開啟就可以了
+
+再來就可以用 cli 直接連接了
+
+
+
+
+先更新資訊，再安裝軟體，最後在整個系統 upgrade
+
+```
+sudo apt-get update;
+
+sudo apt-get install vim apache2 php hostapd isc-dhcp-server -y;
+
+sudo apt-get upgrade -y;
+
+```
 
 * 外接 USB wifi dongle
 
@@ -93,33 +116,34 @@ hdmi_force_hotplug=1
 
 樹莓派內建了一個，還需要一個無線網路介面這邊買了 Edimax EW7811un，有支援 raspbian 作業系統隨插即用 
 
-把安裝好 rasibian 作業系統的記憶卡跟 USB wifi dongle 裝到樹莓派上面之後開機，
+把 dongle 裝在 pi 上的 USB 孔之後 , 
 
-有 RJ 45 網路線的話，可以直接接上，會自動啟動 eth0 介面，拿到 DHCP server offer 的 IP，
-
-先更新系統，再安裝軟體
+再來是確定系統有沒有抓到這個 dongle (USB WIFI device)
 
 ```
-sudo apt-get update;
-sudo apt-get upgrade -y;
-sudo apt-get install vim vim-snippets vim-runtime apache2 php hostapd isc-dhcp-server -y;
-sudo reboot;
-```
 
-再來是確定系統有沒有抓到外加的 dongle (USB WIFI device)
-```
-/*可以看到有沒有 USB 有沒有抓到設備資訊*/
 lsusb
 
-/*確定交叉比對網路介面*/
-/*ifconfig -a 應該可以看到 4 個 interfaces，一個有線 ethernet，兩個無線 ethernet，一個 loop */
+可以看到有沒有 USB 有沒有抓到設備資訊
 
-ifconfig -a
+```
+
+如果有看到某一個 USB port 有網卡的相關資訊 , 那就是有抓到 dongle 了
+
+再來就 reboot
+
+ifconfig -a 應該可以看到 4 個 interfaces，一個有線 ethernet，兩個無線 ethernet，一個 loop
+
+```
+
+ifconfig
+
 iwconfig
 
 
 /*交叉比對出介面跟 MAC 之後，就是來更改並且固定介面的名稱*/
-/*因為如果使用系統預設的介面名稱，兩個無線的 wlan* 名稱很有可能會跳來跳去，這樣會對後期設定造成問題 */
+/*因為如果使用系統預設的介面名稱，兩個無線的 wlan* 
+名稱很有可能會再重開機之後改變，這樣會對後期設定造成問題 */
 
 路徑
 /etc/udev/rules.d/
@@ -129,7 +153,7 @@ iwconfig
 
 
 code 內容
-SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="aa:bb:cc:dd:ee:ff", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="The_name_you_want"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="對應網路介面的 MAC", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="The_name_you_want"
 
 設定完
 reboot
@@ -168,12 +192,17 @@ broadcast 192.168.100.255
 
 
 /*設定 wireless ethernet 支援熱插拔跟設定成 dhcp*/
+
 allow-hotplug wlan_toWAN
 iface wlan_toWAN inet dhcp
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
 /*wpa_supplicant.conf 是 scan AP SSID 並連接的帳密設定檔案*/
 
 ```
+
+
+
 
 * 設定 wpa_supplicant.conf
 
@@ -198,7 +227,18 @@ network={
 另外可以加上一些 parameter
 可以參考下面的 wpa_supplicant.conf 連結
 
-設定完成後 reboot
+
+設定完 wpa_supplicant.conf 之後 , 
+
+可以直接重啟 interface 來載入新的設定
+
+關閉 網路介面 net_interface_1
+sudo ifdown net_interface_1
+
+開啟 網路介面 net_interface_1
+sudo ifup net_interface_1
+
+都 OK 後 , 就 reboot
 
 ```
 
@@ -413,9 +453,9 @@ INTERFACESv4="waln_built_in"
 ```
 iptables 相關指令
 
-iptables 主要是設定 datagram 在介面與介面之間的行為
-也可以設定 NAT 讓子網路上的眾多設備可以透過 iptable 來達成，
-多個 private IP 經由一個 public IP 跟 WAN 端溝通
+iptables 主要是設定封包從網路介面進入後，進到 kernel 之後的處理方法 , 
+進而決定封包的走向，所以 iptable 也稱為防火牆
+
 
 設定相關指令
 iptables
